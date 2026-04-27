@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Ronny & Dahyana</title>
+    <meta name="description" content="Nos casamos y queremos que sean parte de este día tan especial. Confirma tu asistencia.">
+    <meta property="og:title" content="Boda de Ronny & Dahyana">
+    <meta property="og:description" content="Confirma tu asistencia a nuestra boda.">
+    <meta property="og:image" content="https://notxngel.github.io/wedding-invite-template/images/og_wedding_ronny.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" aria-label="Navegación principal">
+        <div class="navbar__container">
+            <a href="#home" class="navbar__logo" aria-label="Ir al inicio">R &amp; D</a>
+            <ul class="navbar__menu" id="navbarMenu" role="list">
+                <li><a href="#home" class="navbar__link" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="#details" class="navbar__link" data-i18n="nav_details">Detalles</a></li>
+                <li><a href="#rsvp" class="navbar__link" data-i18n="nav_rsvp">Confirmar</a></li>
+            </ul>
+            <div class="navbar__actions">
+                <button class="navbar__toggle" id="navbarToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="navbar__link navbar__lang" id="langToggle" aria-label="Cambiar idioma">
+                    <span id="langLabel">ENG</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero__background" role="img" aria-label="Fotografía de fondo"></div>
+
+        <div class="hero__content">
+            <p class="hero__eyebrow bounce-in" data-i18n="hero_eyebrow">¡NOS CASAMOS!</p>
+            <h1 id="hero-title" class="hero__title fade-in">Ronny &amp; Dahyana</h1>
+            <div class="hero__divider" aria-hidden="true"></div>
+
+            <div class="hero__details">
+                <p class="hero__date" data-i18n="hero_date">Sábado, 11 de Julio de 2026</p>
+                <p class="hero__instruction" data-i18n="hero_instruction">Desliza para descubrir todos los detalles.</p>
+            </div>
+
+            <!-- Countdown -->
+            <div id="countdown" class="countdown" aria-label="Cuenta regresiva">
+                <div class="countdown__item">
+                    <span id="days" class="countdown__number" aria-live="polite">0</span>
+                    <span class="countdown__label" data-i18n="countdown_days">Días</span>
+                </div>
+                <div class="countdown__item">
+                    <span id="hours" class="countdown__number" aria-live="polite">0</span>
+                    <span class="countdown__label" data-i18n="countdown_hours">Horas</span>
+                </div>
+                <div class="countdown__item">
+                    <span id="minutes" class="countdown__number" aria-live="polite">0</span>
+                    <span class="countdown__label" data-i18n="countdown_minutes">Minutos</span>
+                </div>
+                <div class="countdown__item">
+                    <span id="seconds" class="countdown__number" aria-live="polite">0</span>
+                    <span class="countdown__label" data-i18n="countdown_seconds">Segundos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero__scroll-indicator" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Album (Galería de Fotos) -->
+    <section id="photo-album" class="album" aria-labelledby="album-title">
+        <div class="container fade-in">
+            <div class="section-header">
+                <p class="section-header__subtitle" data-i18n="album_subtitle">Los momentos que nos trajeron hasta aquí</p>
+                <h2 id="album-title" class="section-header__title" data-i18n="album_title">Nuestra Historia</h2>
+            </div>
+
+            <div class="album__slider" id="albumSlider">
+                <button class="album__btn album__btn--prev" id="btnPrev" aria-label="Anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <div class="album__track" id="albumTrack">
+
+                    <article class="polaroid">
+                        <div class="polaroid__frame">
+                            <img src="images/polaroid_1.png" alt="La gran pregunta" loading="lazy" class="polaroid__img">
+                            <p class="polaroid__caption" data-i18n="caption_1">La gran pregunta</p>
+                        </div>
+                    </article>
+
+                    <article class="polaroid">
+                        <div class="polaroid__frame">
+                            <img src="images/polaroid_2.png" alt="¡Dijo que sí!" loading="lazy" class="polaroid__img">
+                            <p class="polaroid__caption" data-i18n="caption_2">¡Dijo que sí!</p>
+                        </div>
+                    </article>
+
+                    <article class="polaroid">
+                        <div class="polaroid__frame">
+                            <img src="images/polaroid_3.png" alt="Tú y yo, siempre" loading="lazy" class="polaroid__img">
+                            <p class="polaroid__caption" data-i18n="caption_3">Tú y yo, siempre</p>
+                        </div>
+                    </article>
+
+                    <article class="polaroid">
+                        <div class="polaroid__frame">
+                            <img src="images/polaroid_4.png" alt="Para siempre" loading="lazy" class="polaroid__img">
+                            <p class="polaroid__caption" data-i18n="caption_4">Para siempre</p>
+                        </div>
+                    </article>
+
+                    <article class="polaroid">
+                        <div class="polaroid__frame">
+                            <img src="images/polaroid_5.png" alt="Con todo mi corazón" loading="lazy" class="polaroid__img">
+                            <p class="polaroid__caption" data-i18n="caption_5">Con todo mi corazón</p>
+                        </div>
+                    </article>
+
+                    <article class="polaroid">
+                        <div class="polaroid__frame">
+                            <img src="images/polaroid_6.png" alt="Mi lugar favorito" loading="lazy" class="polaroid__img">
+                            <p class="polaroid__caption" data-i18n="caption_6">Mi lugar favorito</p>
+                        </div>
+                    </article>
+
+                </div>
+                <button class="album__btn album__btn--next" id="btnNext" aria-label="Siguiente">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details / FAQ -->
+    <section id="details" class="details" aria-labelledby="details-title">
+        <div class="container fade-in">
+            <div class="section-header">
+                <p class="section-header__subtitle" data-i18n="details_subtitle">Todo lo que necesitas saber</p>
+                <h2 id="details-title" class="section-header__title" data-i18n="details_title">Detalles del Evento</h2>
+            </div>
+
+            <div class="faq">
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span data-i18n="faq_q1">¿Cuándo y dónde es la ceremonia?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-content" data-i18n="faq_a1">
+                            Sábado 11 de julio de 2026 a las 6:00 PM. Consulta la sección de ubicación para más detalles.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span data-i18n="faq_q2">¿A qué hora es la recepción?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-content" data-i18n="faq_a2">
+                            La recepción comienza a las 7:00 PM, justo después de la ceremonia.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span data-i18n="faq_q3">¿Cuál es el código de vestimenta?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-content" data-i18n="faq_a3">
+                            Formal. Por favor, no usar colores verde ni blanco.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span data-i18n="faq_q4">¿Tienen mesa de regalos?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-content" data-i18n="faq_a4">
+                            Lluvia de sobres. Tu presencia es el mejor regalo.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span data-i18n="faq_q5">¿Cuántos cupos tengo asignados?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-content" data-i18n="faq_a5">
+                            Consulta tu invitación personalizada. El número de cupos está indicado en el enlace que recibiste.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dress Code Highlights -->
+    <section class="dress-code-section" aria-labelledby="dress-title">
+        <div class="container fade-in">
+            <div class="dress-code-card">
+                <h2 id="dress-title" class="section-header__title" data-i18n="dress_title">Código de Vestimenta</h2>
+                <p style="margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-text-muted);" data-i18n="dress_subtitle">Formal</p>
+                
+                <p style="margin-top: 2rem; font-family: var(--font-serif); font-size: 1.2rem; color: #D9534F;" data-i18n="dress_notice">Colores no permitidos</p>
+                
+                <div class="dress-code-colors">
+                    <div class="color-forbidden">
+                        <div class="color-circle green">
+                            <span class="color-x">&times;</span>
+                        </div>
+                        <span class="color-label" data-i18n="dress_no_green">Verde</span>
+                    </div>
+                    <div class="color-forbidden">
+                        <div class="color-circle white">
+                            <span class="color-x">&times;</span>
+                        </div>
+                        <span class="color-label" data-i18n="dress_no_white">Blanco</span>
+                    </div>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); max-width: 30rem; margin: 0 auto;" data-i18n="dress_note">
+                    Agradecemos respetar estas indicaciones para mantener la armonía visual del evento.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="locations" aria-labelledby="loc-title">
+        <div class="container fade-in">
+            <div class="section-header">
+                <p class="section-header__subtitle" data-i18n="loc_subtitle">Te esperamos en</p>
+                <h2 id="loc-title" class="section-header__title" data-i18n="loc_title">Ubicación</h2>
+            </div>
+            
+            <div class="location-card">
+                <div class="location-card__map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14371.491295250493!2d-70.301548!3d19.29068!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ebaa4e8990150ab%3A0xc00db1bb5b3c373a!2sCamp_David%20Ranch!5e0!3m2!1ses-419!2sdo!4v1714088924151!5m2!1ses-419!2sdo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="location-card__iframe" title="Mapa del Evento"></iframe>
+                </div>
+                <div style="text-align: center;">
+                    <a href="https://maps.app.goo.gl/f7AfDftY6X2GDuL88?g_st=ac" target="_blank" rel="noopener" class="btn btn--dark" data-i18n="loc_btn">Abrir en Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP CTA -->
+    <section id="rsvp" class="rsvp" aria-labelledby="rsvp-title">
+        <div class="container fade-in">
+            <div class="rsvp__card">
+                <h2 id="rsvp-title" class="section-header__title" style="margin-bottom: 1rem;" data-i18n="rsvp_title">Confirmación</h2>
+                <p style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-accent); font-style: italic; margin-bottom: 2rem;" data-i18n="rsvp_card_subtitle">Esperamos contar con tu presencia</p>
+                
+                <p style="color: var(--color-text-muted); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.6;" data-i18n="rsvp_card_text">
+                    ¿Ya revisaste todos los detalles del evento? Asegúrate de leerlos antes de confirmarnos tu asistencia.
+                </p>
+                <p style="margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; font-weight: bold;"><strong data-i18n="rsvp_deadline">Fecha límite: 15 de Junio de 2026</strong></p>
+                
+                <button class="btn btn--dark" onclick="openRSVP()" aria-haspopup="dialog" data-i18n="rsvp_open_btn">
+                    Confirmar Asistencia
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal RSVP -->
+    <div id="rsvpModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="closeRSVP(event)">
+        <div class="modal__content" onclick="event.stopPropagation()">
+            <button class="modal__close" aria-label="Cerrar" onclick="closeRSVP(event)">&times;</button>
+            
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2 id="modal-title" class="section-header__title" data-i18n="modal_title">Confirmación</h2>
+                <p class="section-header__subtitle" style="margin-bottom: 0.5rem;" data-i18n="modal_subtitle">Será un placer contar contigo</p>
+                <p style="font-size: 0.8rem; color: var(--color-text-muted);" data-i18n="modal_deadline">Por favor confirma antes del <strong>15 de Junio de 2026</strong></p>
+            </div>
+
+            <form id="rsvpForm" class="form" novalidate>
+                <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+                
+                <div id="guestNamesContainer"></div>
+
+                <div class="form__group">
+                    <label class="form__label" data-i18n="form_attendance">¿Asistirás?</label>
+                    <div style="display: flex; gap: 2rem; margin-top: 1rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="attendance" value="si" checked>
+                            <span data-i18n="form_yes" style="font-size: 0.95rem;">¡Sí, ahí estaré!</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="attendance" value="no">
+                            <span data-i18n="form_no" style="font-size: 0.95rem;">Lo siento, no podré ir</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="phone" data-i18n="form_phone">Teléfono Móvil</label>
+                    <input type="tel" class="form__input" id="phone" name="phone" inputmode="tel" placeholder="Ej. +1 809 123 4567" data-i18n-placeholder="form_phone_placeholder" required>
+                    <span class="form__error" id="error-phone" style="color: #D9534F; font-size: 0.8rem; display: none; margin-top: 0.5rem;"></span>
+                </div>
+
+                <div style="height: 1px; background: var(--color-border); margin: 2rem 0;"></div>
+
+                <div class="form__group">
+                    <label class="form__label" for="message" data-i18n="form_message">Mensaje (Opcional)</label>
+                    <textarea class="form__input" id="message" name="message" rows="3" placeholder="Déjanos tus mejores deseos..." data-i18n-placeholder="form_message_placeholder"></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn btn--submit" data-i18n="form_submit">Enviar Confirmación</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer__eyebrow" data-i18n="footer_eyebrow">Con amor y gratitud</p>
+        <h2 class="footer__title">Ronny &amp; Dahyana</h2>
+        <div class="footer__date">11.07.2026</div>
+        <p class="footer__text">&copy; 2026 Ronny &amp; Dahyana.</p>
+        <p class="footer__text" style="margin-top: 0.5rem; opacity: 0.5;" data-i18n="footer_made">Hecho con amor para nuestros invitados</p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
