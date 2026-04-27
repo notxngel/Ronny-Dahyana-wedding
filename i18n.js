@@ -25,12 +25,12 @@ const I18N = {
     /* ── Album ── */
     album_title: "Nuestra Historia",
     album_subtitle: "Los momentos que nos trajeron hasta aquí",
-    caption_1: "La gran pregunta",
-    caption_2: "¡Dijo que sí!",
-    caption_3: "Tú y yo, siempre",
-    caption_4: "Para siempre",
-    caption_5: "Con todo mi corazón",
-    caption_6: "Mi lugar favorito",
+    caption_1: "La propuesta",
+    caption_2: "El anillo",
+    caption_3: "Nuestra gala",
+    caption_4: "Momentos",
+    caption_5: "Tú y yo",
+    caption_6: "Nuestro amor",
 
     /* ── Details ── */
     details_title: "Detalles del Evento",
@@ -124,7 +124,8 @@ const I18N = {
 
     /* ── Footer ── */
     footer_eyebrow: "Con amor y gratitud",
-    footer_made: "Hecho con amor para nuestros invitados"
+    footer_made: "Hecho con amor para nuestros invitados",
+    footer_credits: "Desarrollado por AM dev Studio"
   },
 
   en: {
@@ -146,12 +147,12 @@ const I18N = {
     /* ── Album ── */
     album_title: "Our Story",
     album_subtitle: "The moments that brought us here",
-    caption_1: "The big question",
-    caption_2: "She said yes!",
-    caption_3: "You and me, always",
-    caption_4: "Forever",
-    caption_5: "With all my heart",
-    caption_6: "My favorite place",
+    caption_1: "The proposal",
+    caption_2: "The ring",
+    caption_3: "Our gala",
+    caption_4: "Moments",
+    caption_5: "You and me",
+    caption_6: "Our love",
 
     /* ── Details ── */
     details_title: "Event Details",
@@ -245,7 +246,8 @@ const I18N = {
 
     /* ── Footer ── */
     footer_eyebrow: "With love and gratitude",
-    footer_made: "Made with love for our guests"
+    footer_made: "Made with love for our guests",
+    footer_credits: "Developed by AM dev Studio"
   }
 };
 

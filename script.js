@@ -179,6 +179,11 @@ window.closeRSVP = function(e) {
   }
 };
 
+// Permitir cerrar con Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") window.closeRSVP();
+});
+
 /** 5. FORM: Dynamic Inputs Based on ?c= **/
 (function generateDynamicInputs() {
   const container = document.getElementById("guestNamesContainer");
@@ -200,8 +205,8 @@ window.closeRSVP = function(e) {
     formGroup.className = "form__group";
     formGroup.innerHTML = `
       <label class="form__label" for="guest${i}">${labelText}</label>
-      <input type="text" class="form__input" id="guest${i}" name="guest${i}" placeholder="${placeholder}" ${requiredAttr}>
-      <span class="form__error" id="error-guest${i}" style="color: #D9534F; font-size: 0.8rem; display: none; margin-top: 0.5rem;"></span>
+      <input type="text" class="form__input" id="guest${i}" name="guest${i}" placeholder="${placeholder}" ${requiredAttr} autocomplete="off">
+      <span class="form__error" id="error-guest${i}"></span>
     `;
     container.appendChild(formGroup);
   }
@@ -216,7 +221,7 @@ function setInvalid(input, errorMsg) {
   const errorEl = document.getElementById(`error-${input.id}`);
   if (errorEl) {
     errorEl.textContent = errorMsg;
-    errorEl.style.display = "block";
+    errorEl.classList.add("active");
   }
 }
 
@@ -226,7 +231,7 @@ function clearValidation() {
   const errors = rsvpForm.querySelectorAll(".form__error");
   errors.forEach(error => {
     error.textContent = "";
-    error.style.display = "none";
+    error.classList.remove("active");
   });
 }
 
@@ -247,6 +252,7 @@ function handleValidation() {
 
   if (!isValid) {
     firstInvalidInput.focus();
+    firstInvalidInput.scrollIntoView({ behavior: "smooth", block: "center" });
   }
   return isValid;
 }
@@ -257,7 +263,7 @@ function toggleSubmitState(isSubmitting) {
   
   if (isSubmitting) {
     submitBtn.dataset.originalText = submitBtn.textContent;
-    submitBtn.innerHTML = 'Enviando...';
+    submitBtn.innerHTML = '<span class="spinner"></span> Enviando...';
     submitBtn.disabled = true;
   } else {
     submitBtn.innerHTML = submitBtn.dataset.originalText || "Enviar Confirmación";
@@ -278,7 +284,13 @@ function extractGuestData() {
 
   const formData = new FormData(rsvpForm);
   const mensajeUsuario = formData.get("message") || "";
-  const telefono = formData.get("phone") || "";
+  const telefonoRaw = formData.get("phone") || "";
+  
+  // Limpiar el teléfono: quitar espacios, guiones y caracteres especiales, dejar solo números y el signo +
+  const telefono = telefonoRaw.replace(/[^\d+]/g, "");
+  
+  const cancion = formData.get("songName") || "";
+  const artista = formData.get("songArtist") || "";
 
   const data = {
     nombre: titular,
@@ -291,6 +303,11 @@ function extractGuestData() {
         ? `Acompañantes: ${acompanantes.join(", ")}${mensajeUsuario ? "\n\nMensaje: " + mensajeUsuario : ""}`
         : mensajeUsuario,
   };
+
+  if (cancion) {
+    data.cancion = cancion;
+    data.artista = artista;
+  }
 
   return data;
 }
@@ -330,7 +347,10 @@ rsvpForm?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const honeypot = document.getElementById("website");
-  if (honeypot && honeypot.value !== "") return;
+  if (honeypot && honeypot.value !== "") {
+    mostrarExito();
+    return;
+  }
 
   const now = Date.now();
   if (now - _lastSubmit < CONFIG.rateLimitMs) {
@@ -352,6 +372,14 @@ rsvpForm?.addEventListener("submit", async (e) => {
 
 function mostrarExito() {
   const modalContent = document.querySelector(".modal__content");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const isAdmin = urlParams.get('dbg') === CONFIG.adminKey;
+  const botonPruebasHTML = isAdmin 
+    ? `<p style="margin-top: 1.5rem; font-size: 0.75rem; color: #d1d5db; text-decoration: underline; cursor: pointer;" onclick="localStorage.removeItem('rsvpStatus'); location.reload();">
+          ${t("success_test")}
+       </p>` 
+    : '';
 
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
   const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
@@ -379,6 +407,7 @@ function mostrarExito() {
 
   modalContent.innerHTML = `
         <div style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">💍</div>
             <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.5rem;">
                 ${t("success_title")}
             </h2>
@@ -393,11 +422,13 @@ function mostrarExito() {
 
             <button
                 class="btn"
-                style="margin-top: 1.5rem; color: var(--color-text-muted); text-decoration: underline;"
+                style="margin-top: 1.5rem; color: var(--color-text-muted); text-decoration: underline; background: transparent; border: none;"
                 onclick="window.closeRSVP(); setTimeout(() => location.reload(), 400);"
             >
                 ${t("success_close")}
             </button>
+
+            ${botonPruebasHTML}
         </div>
     `;
 }

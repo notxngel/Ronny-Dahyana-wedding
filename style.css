@@ -554,7 +554,7 @@ body::before {
 }
 
 .dress-code-card {
-  max-width: 50rem;
+  max-width: 100%;
   margin: 0 auto;
   padding: 4rem;
   background: var(--color-sand);
@@ -740,6 +740,60 @@ body::before {
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.form__input.is-invalid {
+  border-color: #D9534F;
+}
+
+.form__error {
+  color: #D9534F;
+  font-size: 0.8rem;
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.form__error.active {
+  display: block;
+}
+
+.form__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 2.5rem 0;
+}
+
+.form__song-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-accent);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.form__song-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 240, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-ivory);
+  animation: spin 1s infinite linear;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* --- 16. FOOTER --- */

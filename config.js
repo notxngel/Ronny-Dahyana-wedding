@@ -6,7 +6,7 @@
  * valide el encabezado "Origin" y rechace cualquier otra procedencia.
  */
 const CONFIG = Object.freeze({
-  webhookURL: "https://hook.us2.make.com/YOUR_WEBHOOK_URL",
+  webhookURL: "https://hook.us2.make.com/7dkcdupytu3b78oonmhlbo62lcv4ebkl",
   adminKey: "rDx92",
   maxCupos: 4,
   rateLimitMs: 30000,
