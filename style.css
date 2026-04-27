@@ -386,11 +386,13 @@ body::before {
 }
 
 .countdown__label {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-top: 0.8em;
-  color: var(--color-accent);
+  letter-spacing: 0.15em;
+  margin-top: 0.5em;
+  color: var(--color-ivory);
+  opacity: 0.9;
 }
 
 /* --- 9. ALBUM --- */
